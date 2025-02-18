@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router'
 import img1 from '../assets/images/image.png'
 import img2 from '../assets/images/image2.png'
 import { FaFacebook,FaGithub,FaWhatsapp, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import videoFile from "../Video/video.mp4";
+
 
 const Dashboard = ({theme}) => {
     const [isLight, setIsLight] = theme;
@@ -20,7 +22,7 @@ const Dashboard = ({theme}) => {
    
   
   return (
-    <div className='flex flex-col gap-10'>
+    <div className='flex flex-col overflow-hidden gap-10'>
 
         <div className='w-full text-center' >
         <h1 className={`${isLight?  'text-[#4acd8d]': 'text-white ' } mx-auto my-20 text-5xl max-w-[700px]`} >
@@ -30,7 +32,7 @@ const Dashboard = ({theme}) => {
             <h2 className='text-4xl  mb-5' >What is Crowdfunding</h2>
             <p className='text-[20px] mb-3' >In its simplest form, Crowdfunding is a practice of giving monetary funds to overcome specific social, cultural, or economic hurdles individuals face in their daily lives.</p>
             <img className='mx-auto' width={700} src={img2} alt="image" />
-            <img className='z-10 -mt-30 ml-40 ' width={700} src={img1} alt="image" />
+            <img className='z-10 -mt-30 ml-40 sm:z-0 ' width={700} src={img1} alt="image" />
         </div>
         <div id='how-it-works' className={`${isLight? 'text-[#4b5264]' : 'text-white' }`} >
              <h2 className='text-4xl mb-9 text-center'>
@@ -41,8 +43,9 @@ const Dashboard = ({theme}) => {
 
              <div>
             <h2 className='text-3xl mb-5' >Start a campaign in three simple steps</h2>
-            <div className='flex justify-around ' >
-                <div>
+            <div className='flex flex-col justify-around ' >
+               <div className='flex '>
+               <div>
                     <img src="https://ketto.gumlet.io/assets/images/homepage/sac-separator.png?dpr=1.0&amp;q=70&amp;w=100" alt="img" />
                 </div>
                 <div className='flex flex-col justify-between' >
@@ -61,10 +64,11 @@ const Dashboard = ({theme}) => {
                     </div>
                     
                 </div>
+               </div>
                 <div>
-                <video className="min-h-36 rounded-lg shadow-lg" autoPlay loop muted >
-                     <source src="./video/video.mov" type="video/mov" />
-                        Your browser does not support the video tag.
+                <video className="min-h-36 rounded-lg shadow-lg w-[300px]" autoPlay loop muted >
+                <source src={videoFile} type="video/mp4" />
+                Your browser does not support the video tag.
                     </video>
                 </div>
                
